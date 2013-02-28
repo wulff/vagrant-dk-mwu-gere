@@ -21,8 +21,13 @@ class apticron(
   $recipients = 'UNSET',
   $version    = present
 ) {
+  package { 'postfix':
+    ensure => present,
+  }
+
   package { 'apticron':
     ensure => $version,
+    require => Package['postfix'],
   }
 
   file { "/etc/apticron/apticron.conf":
