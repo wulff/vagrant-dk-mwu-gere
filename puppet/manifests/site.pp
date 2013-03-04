@@ -98,8 +98,17 @@ class gere::install {
     ensure => latest,
   }
 
-  package { 'screen':
-    ensure => present,
+  screen { $user_name:
+    options => {
+      'vbell' => 'on',
+      'autodetach' => 'on',
+      'startup_message' => 'off',
+    },
+    additions => [
+      'screen -t local 0',
+      'screen -t irssi 1 irssi',
+      'screen -t ttytter 2 ttytter',
+    ],
   }
 
   package { 'tmux':
