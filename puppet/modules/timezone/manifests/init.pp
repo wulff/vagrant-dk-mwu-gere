@@ -17,11 +17,12 @@ class timezone(
   $name = 'UNSET'
 ) {
   file { '/etc/timezone':
-    content => $name,
+    content => "${name}\n",
   }
 
   exec { 'gere-timezone-reconfigure':
     command => 'dpkg-reconfigure --frontend noninteractive tzdata',
+    unless => "grep ${name} /etc/timezone 2>/dev/null",
     require => File['/etc/timezone'],
   }
 }
