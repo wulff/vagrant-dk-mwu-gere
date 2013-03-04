@@ -61,8 +61,13 @@ class gere::install {
     realname => $irssi_real_name,
   }
 
-  class { 'newsbeuter':
-    username => $user_name,
+  newsbeuter { $user_name:
+    feeds => [
+      'http://daringfireball.net/index.xml',
+      'http://onethingwell.org/rss',
+      'http://www.jwz.org/blog/feed/',
+      'http://www.loopinsight.com/feed/',
+    ],
   }
 
   class { 'ttytter':
