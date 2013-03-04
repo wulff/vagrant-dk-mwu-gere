@@ -12,8 +12,9 @@
 #
 #   class { 'newsbeuter': }
 #
-class newsbeuter(
-  $username = 'UNSET',
+define newsbeuter(
+  $username = $title,
+  $feeds = 'UNSET',
   $version  = present
 ) {
   package { 'newsbeuter':
@@ -27,7 +28,7 @@ class newsbeuter(
   }
 
   file { "/home/${username}/.newsbeuter/urls":
-    source  => 'puppet:///modules/newsbeuter/urls',
+    content => template('newsbeuter/urls.erb'),
     owner => $username,
     group => $username,
     require => File["/home/${username}/.newsbeuter"],
