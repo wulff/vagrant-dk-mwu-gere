@@ -12,9 +12,9 @@ import 'settings'
 
 class gere::bootstrap {
   # we need an updated list of sources before we can apply the configuration
-	exec { 'gere_apt_update':
-		command => '/usr/bin/apt-get update',
-	}
+  exec { 'gere_apt_update':
+    command => '/usr/bin/apt-get update',
+  }
 }
 
 class gere::requirements {
@@ -116,6 +116,13 @@ class gere::install {
 
   package { 'lynx':
     ensure => present,
+  }
+
+  # monitoring and notification tools
+
+  class { 'munin::node':
+    # allow => 10.0.0.0, # IP of freke
+    host => 10.178.69.49,
   }
 
   class { 'apticron':
