@@ -122,7 +122,7 @@ class gere::install {
 
   class { 'munin::node':
     # allow => 10.0.0.0, # IP of freke
-    host => 10.178.69.49,
+    host => '10.178.69.49',
   }
 
   class { 'apticron':
