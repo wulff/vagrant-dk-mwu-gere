@@ -153,6 +153,7 @@ class gere::install {
       'screen -t local 0',
       'screen -t irssi 1 irssi',
       'screen -t ttytter 2 ttytter',
+      'screen -t newsbeuter 3 newsbeuter',
     ],
   }
 
@@ -165,6 +166,8 @@ class gere::install {
   class { 'timezone':
     name => 'Europe/Copenhagen',
   }
+
+  class { 'bash': }
 }
 
 class gere::go {
