@@ -152,7 +152,7 @@ class gere::install {
     additions => [
       'screen -t local 0',
       'screen -t irssi 1 irssi',
-      'screen -t ttytter 2 ttytter',
+      'screen -t ttytter 2 ttytter2',
       'screen -t newsbeuter 3 newsbeuter',
     ],
   }
