@@ -1,8 +1,6 @@
 Vagrant: Gere
 =============
 
-TODO: screen should be class for installing package, define for adding settings.
-
 Makes it possible to set up a local copy of gere.mwu.dk.
 
     apt-get update
@@ -17,10 +15,7 @@ The current version of the manifest installs the following useful applications:
 * irssi
 * lynx
 * ncdu
-* newsbeuter
 * screen
-* tmux
-* ttytter
 * vim
 
 Settings

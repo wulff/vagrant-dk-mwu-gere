@@ -61,54 +61,54 @@ class gere::install {
     realname => $irssi_real_name,
   }
 
-  newsbeuter { $user_name:
-    feeds => [
-      'http://ascii.textfiles.com/feed/atom',
-      'http://blog.totallyannette.com/feed/',
-      'http://brooksreview.net/feed/',
-      'http://daringfireball.net/index.xml',
-      'http://drupal.org/planet/rss.xml',
-      'http://drupal.org/taxonomy/term/14/0/feed',
-      'http://drupal.org/taxonomy/term/30/0/feed',
-      'http://feeds.arstechnica.com/arstechnica/everything',
-      'http://feeds.boingboing.net/boingboing/iBag',
-      'http://feeds.feedburner.com/CoudalFreshSignals',
-      'http://feeds.feedburner.com/blogspot/HcFb?format=xml',
-      'http://feeds.feedburner.com/codinghorror/',
-      'http://feeds.penny-arcade.com/pa-mainsite',
-      'http://feeds2.feedburner.com/bynkii',
-      'http://givemesomethingtoread.com/rss',
-      'http://ing.dk/rss/blogs/phloggen',
-      'http://journalisten.dk/rss.xml',
-      'http://localize.drupal.org/taxonomy/term/10/0/feed',
-      'http://onethingwell.org/rss',
-      'http://strobist.blogspot.com/feeds/posts/default?alt=rss',
-      'http://waxy.org/links/index.xml',
-      'http://www.badastronomy.com/bablog/feed/',
-      'http://www.blogger.com/feeds/3157916/posts/default?alt=rss&amp;orderby=published',
-      'http://www.boston.com/bigpicture/index.xml',
-      'http://www.bunniestudios.com/blog/?feed=rss2',
-      'http://www.davenaz.com/ashleyblue/atom.xml',
-      'http://www.imore.com/feed',
-      'http://www.joelonsoftware.com/rss.xml',
-      'http://www.jwz.org/blog/feed/',
-      'http://www.loopinsight.com/feed/',
-      'http://www.macrumors.com/macrumors.xml',
-      'http://www.marco.org/rss',
-      'http://www.schneier.com/blog/index.rdf',
-      'http://www.shorpy.com/feed',
-      'http://www.wired.com/dangerroom/feed/',
-      'http://www.wired.com/threatlevel/feed/',
-      'http://www.xkcd.com/rss.xml',
-    ],
-  }
+  # newsbeuter { $user_name:
+  #   feeds => [
+  #     'http://ascii.textfiles.com/feed/atom',
+  #     'http://blog.totallyannette.com/feed/',
+  #     'http://brooksreview.net/feed/',
+  #     'http://daringfireball.net/index.xml',
+  #     'http://drupal.org/planet/rss.xml',
+  #     'http://drupal.org/taxonomy/term/14/0/feed',
+  #     'http://drupal.org/taxonomy/term/30/0/feed',
+  #     'http://feeds.arstechnica.com/arstechnica/everything',
+  #     'http://feeds.boingboing.net/boingboing/iBag',
+  #     'http://feeds.feedburner.com/CoudalFreshSignals',
+  #     'http://feeds.feedburner.com/blogspot/HcFb?format=xml',
+  #     'http://feeds.feedburner.com/codinghorror/',
+  #     'http://feeds.penny-arcade.com/pa-mainsite',
+  #     'http://feeds2.feedburner.com/bynkii',
+  #     'http://givemesomethingtoread.com/rss',
+  #     'http://ing.dk/rss/blogs/phloggen',
+  #     'http://journalisten.dk/rss.xml',
+  #     'http://localize.drupal.org/taxonomy/term/10/0/feed',
+  #     'http://onethingwell.org/rss',
+  #     'http://strobist.blogspot.com/feeds/posts/default?alt=rss',
+  #     'http://waxy.org/links/index.xml',
+  #     'http://www.badastronomy.com/bablog/feed/',
+  #     'http://www.blogger.com/feeds/3157916/posts/default?alt=rss&amp;orderby=published',
+  #     'http://www.boston.com/bigpicture/index.xml',
+  #     'http://www.bunniestudios.com/blog/?feed=rss2',
+  #     'http://www.davenaz.com/ashleyblue/atom.xml',
+  #     'http://www.imore.com/feed',
+  #     'http://www.joelonsoftware.com/rss.xml',
+  #     'http://www.jwz.org/blog/feed/',
+  #     'http://www.loopinsight.com/feed/',
+  #     'http://www.macrumors.com/macrumors.xml',
+  #     'http://www.marco.org/rss',
+  #     'http://www.schneier.com/blog/index.rdf',
+  #     'http://www.shorpy.com/feed',
+  #     'http://www.wired.com/dangerroom/feed/',
+  #     'http://www.wired.com/threatlevel/feed/',
+  #     'http://www.xkcd.com/rss.xml',
+  #   ],
+  # }
 
-  class { 'ttytter':
-    username => $user_name,
-    ck => $ttytter_ck,
-    cs => $ttytter_cs,
-    at => $ttytter_at,
-  }
+  # class { 'ttytter':
+  #   username => $user_name,
+  #   ck => $ttytter_ck,
+  #   cs => $ttytter_cs,
+  #   at => $ttytter_at,
+  # }
 
   package { 'vim':
     ensure => present,
@@ -120,10 +120,10 @@ class gere::install {
 
   # monitoring and notification tools
 
-  class { 'munin::node':
-    # allow => 10.0.0.0, # IP of freke
-    host => '10.178.69.49',
-  }
+  # class { 'munin::node':
+  #   # allow => 10.0.0.0, # IP of freke
+  #   host => '10.178.69.49',
+  # }
 
   class { 'apticron':
     recipients => $apticron_recipients,
@@ -152,14 +152,14 @@ class gere::install {
     additions => [
       'screen -t local 0',
       'screen -t irssi 1 irssi',
-      'screen -t ttytter 2 ttytter2',
-      'screen -t newsbeuter 3 newsbeuter',
+      # 'screen -t ttytter 2 ttytter2',
+      # 'screen -t newsbeuter 3 newsbeuter',
     ],
   }
 
-  package { 'tmux':
-    ensure => present,
-  }
+  # package { 'tmux':
+  #   ensure => present,
+  # }
 
   # update various system settings
 
