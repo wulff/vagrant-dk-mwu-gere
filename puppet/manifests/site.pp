@@ -53,11 +53,11 @@ class gere::install {
 
   # configure postfix as a null client
   # http://www.postfix.org/STANDARD_CONFIGURATION_README.html#null_client
-  
+
   class { 'postfix':
     hostname => 'gere.mwu.dk',
   }
-  
+
   # install the irssi client
 
   class { 'irssi':
