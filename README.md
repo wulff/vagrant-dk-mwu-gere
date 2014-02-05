@@ -4,7 +4,7 @@ Vagrant: Gere
 Makes it possible to set up a local copy of gere.mwu.dk.
 
     apt-get update
-    apt-get install puppet
+    apt-get install puppet-common
     puppet apply --modulepath=puppet/modules/ puppet/manifests/site.pp
     dpkg-reconfigure postfix
 
