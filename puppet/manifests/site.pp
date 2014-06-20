@@ -164,10 +164,6 @@ class gere::install {
     ],
   }
 
-  # package { 'tmux':
-  #   ensure => present,
-  # }
-
   # update various system settings
 
   class { 'timezone':

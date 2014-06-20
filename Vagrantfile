@@ -1,9 +1,9 @@
 Vagrant::configure('2') do |config|
   # the base box this environment is built off of
-  config.vm.box = 'precise32'
+  config.vm.box = 'trusty32'
 
   # the url from where to fetch the base box if it doesn't exist
-  config.vm.box_url = 'http://files.vagrantup.com/precise32.box'
+  config.vm.box_url = 'https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box'
 
   # configure network
   config.vm.hostname = 'gere.mwu.dk'
