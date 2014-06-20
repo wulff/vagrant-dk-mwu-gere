@@ -9,5 +9,6 @@
 class bash() {
   file { '/etc/profile.d/aliases.sh':
     source  => 'puppet:///modules/bash/aliases.sh',
+    mode => 0644,
   }
 }
