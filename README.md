@@ -4,9 +4,8 @@ Vagrant: Gere
 Makes it possible to set up a local copy of gere.mwu.dk.
 
     apt-get update
-    apt-get install puppet-common
+    apt-get install puppet
     puppet apply --modulepath=puppet/modules/ puppet/manifests/site.pp
-    dpkg-reconfigure postfix
 
 The current version of the manifest installs the following useful applications:
 
@@ -35,7 +34,3 @@ To use the included manifests, you need to add a `settings.pp` file to the `pupp
     $irssi_user_nick = 'jdoe'
 
     $apticron_recipients = 'jdoe@example.com'
-
-    $ttytter_ck = 'X'
-    $ttytter_cs = 'X'
-    $ttytter_at = '<token>'

@@ -13,6 +13,9 @@
 # Allows SSH connections
 -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
 
+# Allows Munin connections from the master node
+-A INPUT -p tcp -m state --state NEW --src 178.79.182.116 --dport 4949 -j ACCEPT
+
 # Allow ping
 -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 

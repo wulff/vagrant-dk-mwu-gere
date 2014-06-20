@@ -12,7 +12,7 @@ Vagrant::configure('2') do |config|
   # configure memory limit and node name
   config.vm.provider 'virtualbox' do |v|
     v.name = 'Vagrant: Gere'
-    v.customize ['modifyvm', :id, '--memory', 256]
+    v.customize ['modifyvm', :id, '--memory', 1024]
   end
 
   # use puppet to provision packages
