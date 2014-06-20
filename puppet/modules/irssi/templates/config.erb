@@ -12,8 +12,8 @@ servers = (
 chatnets = {
   Freenode = {
     type = "IRC";
-    nick = "<%= username %>";
-    autosendcmd = "/msg nickserv identify <%= password %>; wait 2000";
+    nick = "<%= @username %>";
+    autosendcmd = "/msg nickserv identify <%= @password %>; wait 2000";
   };
 };
 
@@ -190,9 +190,9 @@ statusbar = {
 
 settings = {
   core = { 
-    real_name = "<%= realname %>";
-    user_name = "<%= username %>";
-    nick = "<%= nick %>";
+    real_name = "<%= @realname %>";
+    user_name = "<%= @username %>";
+    nick = "<%= @nick %>";
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
