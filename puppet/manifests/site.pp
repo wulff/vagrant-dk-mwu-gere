@@ -106,10 +106,9 @@ class gere::install {
 
   # monitoring and notification tools
 
-  # class { 'munin::node':
-  #   # allow => 10.0.0.0, # IP of freke
-  #   host => '10.178.69.49',
-  # }
+  class { 'munin::node':
+    host => '192.168.157.235',
+  }
 
   class { 'apticron':
     recipients => $apticron_recipients,
