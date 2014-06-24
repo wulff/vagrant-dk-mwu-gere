@@ -107,7 +107,7 @@ class gere::install {
   # monitoring and notification tools
 
   class { 'munin::node':
-    host => '192.168.157.235',
+    host => '192.168.187.17',
   }
 
   class { 'apticron':
