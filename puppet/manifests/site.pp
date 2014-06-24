@@ -154,6 +154,15 @@ alias upgrade="sudo apt-get upgrade"
 alias puppet-apply="sudo puppet apply --modulepath=/home/wulff/vagrant/puppet/modules/ /home/wulff/vagrant/puppet/manifests/site.pp"',
     mode => 0644,
   }
+
+  file { '/etc/hostname':
+    content => 'gere.mwu.dk',
+    mode => 0644,
+  }
+  exec { 'update-hostname':
+    command => '/bin/hostname -F /etc/hostname',
+    require => File['/etc/hostname'],
+  }
 }
 
 class gere::go {
