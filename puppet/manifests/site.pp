@@ -108,6 +108,7 @@ class gere::install {
 
   class { 'munin::node':
     host => '192.168.187.17',
+    allow => '^192\.168\.157\.235$',
   }
 
   class { 'apticron':
