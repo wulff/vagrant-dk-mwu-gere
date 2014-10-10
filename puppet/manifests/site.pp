@@ -104,6 +104,46 @@ class gere::install {
     ensure => present,
   }
 
+  # install various tools and toys
+
+  package { 'surfraw':
+    ensure => present,
+  }
+
+  package { 'emacs24-nox':
+    ensure => present,
+  }
+
+  package { 'elinks':
+    ensure => present,
+  }
+
+  package { 'figlet':
+    ensure => present,
+  }
+
+  package { 'tig':
+    ensure => present,
+  }
+
+  package { 'alpine':
+    ensure => present,
+  }
+
+  package { 'cowsay':
+    ensure => present,
+  }
+
+  package { 'fortune-mod':
+    ensure => present,
+  }
+  package { 'fortunes-min':
+    ensure => present,
+  }
+  package { 'fortunes-bofh-excuses':
+    ensure => present,
+  }
+
   # monitoring and notification tools
 
   class { 'munin::node':

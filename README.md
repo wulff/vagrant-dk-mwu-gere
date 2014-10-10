@@ -16,6 +16,15 @@ The current version of the manifest installs the following useful applications:
 * ncdu
 * screen
 * vim
+* surfraw
+* emacs-nox
+* elinks
+* figlet
+* tig
+* alpine
+* fortune-mod
+* cowsay
+
 
 Settings
 --------
