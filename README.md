@@ -24,6 +24,9 @@ The current version of the manifest installs the following useful applications:
 * alpine
 * fortune-mod
 * cowsay
+* avconv (ffmpeg fork)
+* imagemagick
+* graphviz
 
 
 Settings

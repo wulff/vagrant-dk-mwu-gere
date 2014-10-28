@@ -104,6 +104,18 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'libav-tools':
+    ensure => present,
+  }
+
+  package { 'imagemagick':
+    ensure => present,
+  }
+
+  package { 'graphviz':
+    ensure => present,
+  }
+
   # install various tools and toys
 
   package { 'surfraw':
