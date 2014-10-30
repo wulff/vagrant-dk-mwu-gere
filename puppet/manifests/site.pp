@@ -92,6 +92,8 @@ class gere::install {
     ],
   }
 
+  # install various tools and toys
+
   package { 'vim':
     ensure => present,
   }
@@ -116,7 +118,9 @@ class gere::install {
     ensure => present,
   }
 
-  # install various tools and toys
+  package { 'gdal-bin':
+    ensure => present,
+  }
 
   package { 'surfraw':
     ensure => present,
