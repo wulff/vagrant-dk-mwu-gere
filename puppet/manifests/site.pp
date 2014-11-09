@@ -106,6 +106,10 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'nmap':
+    ensure => present,
+  }
+
   package { 'libav-tools':
     ensure => present,
   }

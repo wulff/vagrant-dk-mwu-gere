@@ -27,6 +27,7 @@ The current version of the manifest installs the following useful applications:
 * avconv (ffmpeg fork)
 * imagemagick
 * graphviz
+* nmap
 
 
 Settings
