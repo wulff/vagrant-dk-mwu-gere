@@ -134,18 +134,28 @@ class gere::install {
     ensure => present,
   }
 
-  package { 'npm':
+  # package { 'npm':
+  #   ensure => present,
+  # }
+  #
+  # file { '/usr/bin/node':
+  #   ensure => link,
+  #   target => '/usr/bin/nodejs',
+  #   require => Package['npm'],
+  # }
+  #
+  # exec { 'npm-install-carto':
+  #   command => 'npm install -g carto',
+  #   creates => '/usr/local/bin/carto',
+  #   require => File['/usr/bin/node'],
+  # }
+
+  package { 'node-carto':
     ensure => present,
   }
 
-  exec { 'npm-install-carto':
-    command => 'npm install -g carto',
-    require => Package['npm'],
-  }
-
-  exec { 'npm-install-millstone':
-    command => 'npm install -g millstone',
-    require => Package['npm'],
+  package { 'node-millstone':
+    ensure => present,
   }
 
   package { 'surfraw':
