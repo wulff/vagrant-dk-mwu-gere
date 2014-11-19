@@ -126,6 +126,28 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'mapnik-utils':
+    ensure => present,
+  }
+
+  package { 'libmapnik-dev':
+    ensure => present,
+  }
+
+  package { 'npm':
+    ensure => present,
+  }
+
+  exec { 'npm-install-carto':
+    command => 'npm install -g carto',
+    require => Package['npm'],
+  }
+
+  exec { 'npm-install-millstone':
+    command => 'npm install -g millstone',
+    require => Package['npm'],
+  }
+
   package { 'surfraw':
     ensure => present,
   }
@@ -199,6 +221,8 @@ class gere::install {
       'screen -t local 0',
       'screen -t irssi 1 irssi',
       'screen -t newsbeuter 2 newsbeuter',
+      'shelltitle \'\'',
+      'caption always "%{= KW}%-Lw%{= wb}%n %t %{= KW}%+Lw %-=| ${USER}@%H | %M%d %c%{-}"',
     ],
   }
 
@@ -209,6 +233,12 @@ class gere::install {
   }
 
   file { '/etc/profile.d/aliases.sh':
+    content => 'alias update="sudo apt-get update"
+alias upgrade="sudo apt-get upgrade"
+alias puppet-apply="sudo puppet apply --modulepath=/home/wulff/vagrant/puppet/modules/ /home/wulff/vagrant/puppet/manifests/site.pp"',
+    mode => 0644,
+  }
+  file { "/home/${username}/.bash_aliases":
     content => 'alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 alias puppet-apply="sudo puppet apply --modulepath=/home/wulff/vagrant/puppet/modules/ /home/wulff/vagrant/puppet/manifests/site.pp"',
