@@ -56,7 +56,7 @@ class gere::install {
     hostname => 'gere.mwu.dk',
   }
 
-  # install the irssi client
+  # install network clients and tools
 
   class { 'irssi':
     realuser => $user_name,
@@ -69,7 +69,6 @@ class gere::install {
   newsbeuter { $user_name:
     feeds => [
       'http://ascii.textfiles.com/feed/atom',
-      'http://blog.totallyannette.com/feed/',
       'http://brooksreview.net/feed/',
       'http://daringfireball.net/index.xml',
       'http://feeds.feedburner.com/CoudalFreshSignals',
@@ -92,7 +91,47 @@ class gere::install {
     ],
   }
 
-  # install various tools and toys
+  package { 'lynx':
+    ensure => present,
+  }
+
+  package { 'elinks':
+    ensure => present,
+  }
+
+  package { 'nmap':
+    ensure => present,
+  }
+
+  package { 'iftop':
+    ensure => present,
+  }
+
+  package { 'siege':
+    ensure => present,
+  }
+
+  package { 'surfraw':
+    ensure => present,
+  }
+
+  package { 'ngrep':
+    ensure => present,
+  }
+
+  package { 'rtorrent':
+    ensure => present,
+  }
+
+  package { 'alpine':
+    ensure => present,
+  }
+
+  package { 'mcabber':
+    ensure => present,
+  }
+
+  # install and configure editors and productivity tools
 
   package { 'vim':
     ensure => present,
@@ -102,13 +141,27 @@ class gere::install {
     require => Package['vim'],
   }
 
-  package { 'lynx':
+  package { 'emacs24-nox':
     ensure => present,
   }
 
-  package { 'nmap':
+  package { 'task':
     ensure => present,
   }
+
+  package { 'qalc':
+    ensure => present,
+  }
+
+  package { 'ledger':
+    ensure => present,
+  }
+
+  package { 'calcurse':
+    ensure => present,
+  }
+
+  # install graphics and a/v tools
 
   package { 'libav-tools':
     ensure => present,
@@ -122,6 +175,12 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'youtube-dl':
+    ensure => present,
+  }
+
+  # install gis tools
+
   package { 'gdal-bin':
     ensure => present,
   }
@@ -134,22 +193,6 @@ class gere::install {
     ensure => present,
   }
 
-  # package { 'npm':
-  #   ensure => present,
-  # }
-  #
-  # file { '/usr/bin/node':
-  #   ensure => link,
-  #   target => '/usr/bin/nodejs',
-  #   require => Package['npm'],
-  # }
-  #
-  # exec { 'npm-install-carto':
-  #   command => 'npm install -g carto',
-  #   creates => '/usr/local/bin/carto',
-  #   require => File['/usr/bin/node'],
-  # }
-
   package { 'node-carto':
     ensure => present,
   }
@@ -158,27 +201,23 @@ class gere::install {
     ensure => present,
   }
 
-  package { 'surfraw':
+  # install development tools
+
+  package { 'jq':
     ensure => present,
   }
 
-  package { 'emacs24-nox':
+  package { 'cloc':
     ensure => present,
   }
 
-  package { 'elinks':
-    ensure => present,
-  }
+  # install various toys
 
   package { 'figlet':
     ensure => present,
   }
 
   package { 'tig':
-    ensure => present,
-  }
-
-  package { 'alpine':
     ensure => present,
   }
 
@@ -193,6 +232,10 @@ class gere::install {
     ensure => present,
   }
   package { 'fortunes-bofh-excuses':
+    ensure => present,
+  }
+
+  package { 'nethack-console':
     ensure => present,
   }
 
@@ -213,12 +256,40 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'atop':
+    ensure => present,
+  }
+
   package { 'ncdu':
     ensure => present,
   }
 
   package { 'ntp':
     ensure => latest,
+  }
+
+  package { 'pv':
+    ensure => present,
+  }
+
+  package { 'dstat':
+    ensure => present,
+  }
+
+  package { 'atsar':
+    ensure => present,
+  }
+
+  package { 'multitail':
+    ensure => present,
+  }
+
+  package { 'ack-grep':
+    ensure => present,
+  }
+
+  package { 'tree':
+    ensure => present,
   }
 
   screen { $user_name:
