@@ -7,7 +7,7 @@ Vagrant::configure('2') do |config|
 
   # configure network
   config.vm.hostname = 'gere.mwu.dk'
-  config.vm.network :private_network, ip: '33.33.33.10'
+  config.vm.network :private_network, ip: '33.33.33.33'
 
   # configure memory limit and node name
   config.vm.provider 'virtualbox' do |v|
