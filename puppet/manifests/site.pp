@@ -179,6 +179,10 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'mimms':
+    ensure => present,
+  }
+
   # install gis tools
 
   package { 'gdal-bin':
