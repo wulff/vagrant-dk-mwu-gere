@@ -175,6 +175,10 @@ class gere::install {
     ensure => present,
   }
 
+  package { 'gnuplot-nox':
+    ensure => present,
+  }
+
   package { 'youtube-dl':
     ensure => present,
   }
